@@ -1,0 +1,482 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --green-500: hsl(171, 66%, 44%);
+  --green-400: hsl(171, 66%, 58%);
+  --blue-100: hsl(233, 100%, 69%);
+  --blue-80: hsl(233, 100%, 80%);
+  --gray-700: hsl(210, 10%, 33%);
+  --gray-500: hsl(201, 11%, 66%);
+  --footer-bg: hsl(0, 0%, 96%);
+
+  --font: "Bai Jamjuree", sans-serif;
+  --container: 69.375rem; /* 1110px */
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 1.125rem; /* 18px from style guide */
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--gray-500);
+  background: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--blue-100);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--gray-700);
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.section-intro {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.section-intro p {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--green {
+  background: var(--green-500);
+  box-shadow: 0 6px 12px hsla(171, 66%, 44%, 0.3);
+}
+
+.btn--blue {
+  background: var(--blue-100);
+  box-shadow: 0 6px 12px hsla(233, 100%, 69%, 0.3);
+}
+
+.btn--green:hover,
+.btn--green:focus-visible {
+  background: var(--green-400);
+}
+
+.btn--blue:hover,
+.btn--blue:focus-visible {
+  background: var(--blue-80);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 3.5rem 1.5rem 4rem;
+  background: url("./images/bg-header-mobile.png") no-repeat center top / cover;
+  text-align: center;
+}
+
+.hero__logo {
+  width: 3.5rem;
+  height: auto;
+  margin: 0 auto 4rem;
+}
+
+.hero p {
+  max-width: 34rem;
+  margin: 1rem auto 2rem;
+  font-size: 1rem;
+}
+
+/* ---------- Snippets (monitor + features) ---------- */
+.snippets {
+  padding-top: 5rem;
+}
+
+.snippets__showcase {
+  margin-top: 3rem;
+}
+
+.snippets__image {
+  max-width: 30rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.snippets__features {
+  margin-top: 2rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.snippets__features li + li {
+  margin-top: 1.75rem;
+}
+
+.snippets__features p,
+.workflow__features p {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+}
+
+/* ---------- Access anywhere ---------- */
+.anywhere {
+  padding-top: 5rem;
+}
+
+.anywhere__image {
+  width: 100%;
+  max-width: 50.625rem;
+  margin: 2.5rem auto 0;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Workflow ---------- */
+.workflow {
+  padding: 5rem 1.5rem 0;
+}
+
+.workflow__features {
+  max-width: var(--container);
+  margin: 3rem auto 0;
+  text-align: center;
+}
+
+.workflow__features li {
+  max-width: 20rem;
+  margin-inline: auto;
+}
+
+.workflow__features li + li {
+  margin-top: 2.5rem;
+}
+
+.workflow__features img {
+  margin: 0 auto 2rem;
+}
+
+.workflow__features h3 {
+  color: var(--gray-700);
+}
+
+/* ---------- Clients ---------- */
+.clients {
+  padding: 4.5rem 1.5rem 0;
+}
+
+.clients__logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+/* ---------- Call to action ---------- */
+.cta {
+  padding: 5rem 0 6rem;
+}
+
+.cta .btn-group {
+  margin-top: 2rem;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 3rem 1.5rem;
+  background: var(--footer-bg);
+  color: var(--gray-700);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+.site-footer__logo img {
+  width: 2.75rem;
+  height: auto;
+}
+
+.site-footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9375rem;
+}
+
+.site-footer__nav a {
+  transition: color 0.2s ease;
+}
+
+.site-footer__nav a:hover,
+.site-footer__nav a:focus-visible {
+  color: var(--green-500);
+}
+
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-footer__social a {
+  display: block;
+  color: hsl(210, 10%, 33%);
+  transition: color 0.2s ease;
+}
+
+.site-footer__social a:hover,
+.site-footer__social a:focus-visible {
+  color: var(--green-500);
+}
+
+/* ---------- Attribution ---------- */
+.attribution {
+  padding: 1rem;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ======================================================
+   Desktop (design is 1440px wide)
+   ====================================================== */
+@media (min-width: 64rem) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .section-intro {
+    max-width: 42rem;
+  }
+
+  .section-intro p {
+    font-size: 1.0625rem;
+  }
+
+  /* Buttons side by side */
+  .btn-group {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    max-width: none;
+  }
+
+  .btn {
+    padding-inline: 2.25rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 5.5rem 1.5rem 5rem;
+    background-image: url("./images/bg-header-desktop.png");
+  }
+
+  .hero__logo {
+    width: 5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+  }
+
+  /* Snippets: monitor bleeds off the left edge of the viewport */
+  .snippets {
+    padding-top: 7rem;
+  }
+
+  .snippets__showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 4rem;
+    overflow: hidden;
+  }
+
+  .snippets__image {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .snippets__image img {
+    width: calc(100% + 2rem);
+    max-width: none;
+    margin-left: -2rem;
+  }
+
+  .snippets__features {
+    max-width: 26rem;
+    margin-top: 0;
+    padding: 0 0 0 4rem;
+    text-align: left;
+  }
+
+  .snippets__features li + li {
+    margin-top: 2.25rem;
+  }
+
+  /* Anywhere */
+  .anywhere {
+    padding-top: 7rem;
+  }
+
+  .anywhere__image {
+    margin-top: 3rem;
+  }
+
+  /* Workflow */
+  .workflow {
+    padding-top: 7rem;
+  }
+
+  .workflow__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .workflow__features li {
+    max-width: none;
+    margin: 0;
+  }
+
+  .workflow__features li + li {
+    margin-top: 0;
+  }
+
+  /* Clients */
+  .clients {
+    padding-top: 6rem;
+  }
+
+  .clients__logos {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 6rem 0 7rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding-block: 3.5rem;
+  }
+
+  .site-footer__inner {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .site-footer__nav {
+    margin-left: 5rem;
+  }
+
+  .site-footer__nav ul {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: 11.5rem;
+    align-items: start;
+    gap: 1rem 0;
+  }
+
+  .site-footer__nav li {
+    justify-self: start;
+  }
+
+  .site-footer__social {
+    margin-left: auto;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
